@@ -1,0 +1,47 @@
+<UserControl x:Class="EMx.UI.CanvasExBoxItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:emxui.conv="clr-namespace:EMx.UI.ValueConverters"
+             FontSize="11" SnapsToDevicePixels="true" UseLayoutRounding="true" MinWidth="100"
+             Background="#FAFAFA" BorderBrush="Black" BorderThickness="1">
+  <FrameworkElement.Resources>
+    <emxui.conv:ColorToSolidBrushConverter x:Key="convColorToBrush"/>
+  </FrameworkElement.Resources>
+  <Grid>
+    <FrameworkElement.LayoutTransform>
+      <TransformGroup>
+        <ScaleTransform ScaleX="{Binding ScaleTransform_ScaleX}" ScaleY="{Binding ScaleTransform_ScaleY}"/>
+        <RotateTransform Angle="{Binding RotateTransform_Angle}"/>
+      </TransformGroup>
+    </FrameworkElement.LayoutTransform>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="{Binding HeaderHeight}"/>
+      <RowDefinition Height="1"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid Row="0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="5"/>
+        <ColumnDefinition Width="1"/>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="1"/>
+        <ColumnDefinition Width="5"/>
+      </Grid.ColumnDefinitions>
+      <Label Grid.Row="0" Grid.Column="0"/>
+      <Label Grid.Row="0" Grid.Column="4"/>
+      <Label MouseMove="Title_MouseMove" MouseUp="Title_MouseUp" MouseDown="Title_MouseDown" x:Name="TitleCtrl"
+             Grid.Row="0" Grid.Column="2" FontWeight="Bold" VerticalContentAlignment="Center"
+             HorizontalContentAlignment="Center" Padding="1" Margin="1"
+             Background="{Binding HeaderColor, Converter={StaticResource convColorToBrush}}"
+             Content="{Binding HeaderTitle}"/>
+      <Label Grid.Row="0" Grid.Column="1" Background="Black"/>
+      <Label Grid.Row="0" Grid.Column="3" Background="Black"/>
+    </Grid>
+    <Label Grid.Row="1" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+    <Border x:Name="ctrlBorder" Grid.Row="2" BorderThickness="0">
+      <ContentControl x:Name="ctrlMain"/>
+    </Border>
+  </Grid>
+</UserControl>

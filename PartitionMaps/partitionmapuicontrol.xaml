@@ -1,0 +1,29 @@
+<UserControl x:Class="EMx.UI.PartitionMaps.PartitionMapUIControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EMx.UI.PartitionMaps"
+             xmlns:emxui.maps="clr-namespace:EMx.UI.Maps">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition x:Name="colFirst" Width="*"/>
+      <ColumnDefinition Width="{Binding RangeBarWidth}"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="24"/>
+    </Grid.RowDefinitions>
+    <local:PartitionMapControl x:Name="ctrlPMap" Grid.Row="0" Margin="1"/>
+    <emxui.maps:MapRangeControl x:Name="ctrlRangeBar" BorderBrush="DarkGray" BorderThickness="1" Grid.Column="1" Margin="1"/>
+    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" Margin="1">
+      <Label MouseDoubleClick="txtImageOffset_MouseDoubleClick" x:Name="txtImageOffset" Padding="1" Margin="1"
+             Width="150" Background="White" HorizontalContentAlignment="Center"
+             VerticalContentAlignment="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+             BorderBrush="DarkGray" BorderThickness="1"/>
+      <Label x:Name="txtCenterPos" Padding="1" Margin="1" Width="150" Background="White"
+             HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" VerticalAlignment="Stretch"
+             HorizontalAlignment="Stretch" BorderBrush="DarkGray" BorderThickness="1">Center (0um, 0um)</Label>
+    </StackPanel>
+  </Grid>
+</UserControl>

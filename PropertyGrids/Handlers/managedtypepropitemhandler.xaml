@@ -1,0 +1,21 @@
+<UserControl x:Class="EMx.UI.PropertyGrids.Handlers.ManagedTypePropItemHandler"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EMx.UI.PropertyGrids.Handlers">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="30"/>
+    </Grid.ColumnDefinitions>
+    <Label x:Name="txtTypeName" HorizontalAlignment="Stretch" Grid.Column="0" Padding="1" Margin="1"
+           FontWeight="Normal" VerticalAlignment="Stretch" VerticalContentAlignment="Center"
+           HorizontalContentAlignment="Left" BorderThickness="1" BorderBrush="DarkGray"
+           Background="Transparent"/>
+    <Label MouseDoubleClick="Label_MouseDoubleClick" HorizontalAlignment="Stretch" Grid.Column="1" Padding="1"
+           Margin="1" FontWeight="Bold" VerticalAlignment="Stretch" VerticalContentAlignment="Center"
+           HorizontalContentAlignment="Center" BorderThickness="1" BorderBrush="DarkGray"
+           Background="Transparent" Foreground="IndianRed">...</Label>
+  </Grid>
+</UserControl>

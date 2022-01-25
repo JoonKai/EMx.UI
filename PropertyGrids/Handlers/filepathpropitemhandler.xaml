@@ -1,0 +1,23 @@
+<UserControl x:Class="EMx.UI.PropertyGrids.Handlers.FilePathPropItemHandler"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EMx.UI.PropertyGrids.Handlers"
+             VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="1" BorderThickness="1"
+             BorderBrush="DarkGray">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="1"/>
+      <ColumnDefinition Width="20"/>
+    </Grid.ColumnDefinitions>
+    <TextBox x:Name="TextCtrl" Grid.Column="0" BorderThickness="0" Background="Transparent"
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center"
+             HorizontalContentAlignment="Left"/>
+    <Label Padding="0" Grid.Column="1" BorderThickness="0" Background="DarkGray"/>
+    <Label MouseUp="Label_MouseUp" Padding="0" Grid.Column="2" BorderThickness="0" Background="#efefef"
+           HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Stretch"
+           VerticalContentAlignment="Center" FontWeight="Bold">...</Label>
+  </Grid>
+</UserControl>

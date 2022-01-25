@@ -1,0 +1,40 @@
+<UserControl x:Class="EMx.UI.PartitionMaps.ScalablePartitionMapUIControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EMx.UI.PartitionMaps"
+             xmlns:emxui.maps="clr-namespace:EMx.UI.Maps">
+  <Grid ContextMenuOpening="Grid_ContextMenuOpening">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition x:Name="colFirst" Width="*"/>
+      <ColumnDefinition Width="{Binding RangeBarWidth}"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="24"/>
+    </Grid.RowDefinitions>
+    <local:ScalablePartitionMapControl x:Name="ctrlPMap" MouseMove="ctrlPMap_MouseMove" Grid.Row="0" Margin="0">
+      <FrameworkElement.ContextMenu>
+        <ContextMenu>
+          <MenuItem Header="Pin">
+            <MenuItem Click="cmnuPin_CreatePinHere_Clicked" Header="Create Pin Here"/>
+            <MenuItem Click="cmnuPin_FindNearestPin_Clicked" Header="Find Nearest Pin"/>
+          </MenuItem>
+        </ContextMenu>
+      </FrameworkElement.ContextMenu>
+    </local:ScalablePartitionMapControl>
+    <emxui.maps:MapRangeControl x:Name="ctrlRangeBar" BorderBrush="DarkGray" BorderThickness="1" Grid.Column="1" Margin="1"/>
+    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" Margin="1">
+      <Label x:Name="txtMousePos" Padding="1" Margin="1" Width="250" Background="White"
+             HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch"
+             HorizontalAlignment="Stretch" BorderBrush="DarkGray" BorderThickness="1">Pixel Position</Label>
+      <Label x:Name="txtHoverValue" Padding="1" Margin="1" Width="150" Background="White"
+             HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch"
+             HorizontalAlignment="Stretch" BorderBrush="DarkGray" BorderThickness="1">Value</Label>
+      <Label x:Name="txtScale" Padding="1" Margin="1" Width="250" Background="White"
+             HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch"
+             HorizontalAlignment="Stretch" BorderBrush="DarkGray" BorderThickness="1">Zoom</Label>
+    </StackPanel>
+  </Grid>
+</UserControl>

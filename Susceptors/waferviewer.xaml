@@ -1,0 +1,24 @@
+<UserControl x:Class="EMx.UI.Susceptors.WaferViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EMx.UI.Susceptors"
+             xmlns:Custom="clr-namespace:EMx.UI.Maps"
+             SizeChanged="UserControl_SizeChanged" Drop="UserControl_Drop"
+             MouseLeftButtonUp="UserControl_MouseLeftButtonUp" Background="Transparent" AllowDrop="true">
+  <FrameworkElement.ContextMenu>
+    <ContextMenu>
+      <MenuItem Click="mnuDelete_Click" x:Name="mnuDelete" Header="Delete"/>
+      <MenuItem Click="mnuLoad_Click" x:Name="mnuLoad" Header="Load"/>
+    </ContextMenu>
+  </FrameworkElement.ContextMenu>
+  <Grid x:Name="grd">
+    <Custom:OnlyWaferMapControl x:Name="ctrlMap" Margin="2"/>
+    <Ellipse x:Name="ellp" StrokeThickness="1" Stroke="{Binding WaferBorderColor}"/>
+    <local:Arc x:Name="arcThis" Center="149.5,149.5" Stroke="Red" StrokeThickness="2" SnapsToDevicePixels="true"
+               StartAngle="80" EndAngle="100" SmallAngle="true" Radius="150" Visibility="{Binding ArcVisible}"/>
+    <Label x:Name="lbl" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{Binding Index}"
+           Visibility="{Binding IndexVisible}"/>
+  </Grid>
+</UserControl>

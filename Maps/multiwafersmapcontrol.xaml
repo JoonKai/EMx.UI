@@ -1,0 +1,35 @@
+<UserControl x:Class="EMx.UI.Maps.MultiWafersMapControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:arrows="clr-namespace:EMx.UI.Arrows"
+             xmlns:emxui.maps="clr-namespace:EMx.UI.Maps"
+             FontSize="11" Background="#F9F9F9" SnapsToDevicePixels="true" MinWidth="30" MinHeight="30"
+             Padding="2">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition x:Name="colFirst" Width="*"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="{Binding RangeBarWidth}"/>
+    </Grid.ColumnDefinitions>
+    <Grid x:Name="ctrlMapGrid" Margin="0" ZIndex="1">
+      <ListBox SelectionChanged="ctrlItems_SelectionChanged" PreviewMouseWheel="ctrlItems_MouseWheel"
+               x:Name="ctrlItems" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ItemsControl.ItemsPanel>
+          <ItemsPanelTemplate>
+            <WrapPanel Orientation="Horizontal" IsItemsHost="true"/>
+          </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <FrameworkElement.ContextMenu>
+          <ContextMenu>
+            <MenuItem Click="mnuChangeItemSize_Clicked" Header="Item Size"/>
+          </ContextMenu>
+        </FrameworkElement.ContextMenu>
+      </ListBox>
+    </Grid>
+    <GridSplitter Grid.Column="1" Margin="1,0,1, 0" Width="3" Focusable="false" VerticalAlignment="Stretch"
+                  HorizontalAlignment="Center" Background="#A5BCDD" ShowsPreview="true"/>
+    <emxui.maps:MapRangeControl x:Name="ctrlRangeBar" BorderBrush="DarkGray" BorderThickness="1" Grid.Column="2"/>
+  </Grid>
+</UserControl>

@@ -1,0 +1,44 @@
+<UserControl x:Class="EMx.UI.Equipments.WaferSlots.WaferSlotListViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EMx.UI.Equipments.WaferSlots">
+  <FrameworkElement.Resources>
+    <Style x:Key="CenterGridHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+      <Setter Property="FrameworkElement.HorizontalAlignment" Value="Stretch"/>
+      <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+    </Style>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <DataGrid Background="White" RowHeight="22" Grid.Row="0" SelectionMode="Single" AutoGenerateColumns="false"
+              IsReadOnly="false" BorderThickness="0" ColumnHeaderStyle="{DynamicResource CenterGridHeaderStyle}"
+              CanUserAddRows="false" CanUserDeleteRows="false" CanUserReorderColumns="false"
+              CanUserResizeRows="false" CanUserSortColumns="false" ItemsSource="{Binding WaferSlotSource}">
+      <DataGrid.Columns>
+        <DataGridCheckBoxColumn Header="" Width="30" Binding="{Binding Path=IsSelected}"/>
+        <DataGridTextColumn Header="SLOT" IsReadOnly="true" Width="70" Binding="{Binding Path=SlotNo}"/>
+        <DataGridTextColumn Header="Substrate ID" Width="*" Binding="{Binding Path=WaferName}"/>
+      </DataGrid.Columns>
+      <FrameworkElement.ContextMenu>
+        <ContextMenu>
+          <MenuItem Click="mnuSelectAll_Clicked" Header="Select All"/>
+          <MenuItem Click="mnuDeselectAll_Clicked" Header="Deselect All"/>
+          <MenuItem Click="mnuSetSlots_Clicked" Header="Select Slots" IsEnabled="false"/>
+          <Separator/>
+          <MenuItem Click="mnuSetNames_Clicked" Header="Set Names" IsEnabled="false"/>
+        </ContextMenu>
+      </FrameworkElement.ContextMenu>
+    </DataGrid>
+    <StackPanel Orientation="Horizontal" Grid.Row="1">
+      <Button Click="btnSelectAll_Click" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+              BorderBrush="DarkGray" BorderThickness="1" Margin="2" Width="80">Select All</Button>
+      <Button Click="btnDeSelectAll_Click" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+              BorderBrush="DarkGray" BorderThickness="1" Margin="2" Width="80">DeSelect All</Button>
+    </StackPanel>
+  </Grid>
+</UserControl>

@@ -1,0 +1,64 @@
+<Window x:Class="EMx.UI.Dialogs.InputKeyValueItemsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Loaded="Window_Loaded" Title="NotifyMessage" Height="300" Width="450" WindowStyle="None"
+        FontSize="11" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+  <FrameworkElement.Resources>
+    <Style x:Key="CenterGridHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+      <Setter Property="FrameworkElement.HorizontalAlignment" Value="Stretch"/>
+      <Setter Property="Control.HorizontalContentAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="styleVCenterGridCell" TargetType="{x:Type DataGridCell}">
+      <Setter Property="Control.Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type DataGridCell}">
+            <Grid Background="{TemplateBinding Control.Background}">
+              <ContentPresenter VerticalAlignment="Center"/>
+            </Grid>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </FrameworkElement.Resources>
+  <Border BorderThickness="1" BorderBrush="LightGray">
+    <Border BorderThickness="3" BorderBrush="White">
+      <Border BorderThickness="2" BorderBrush="White">
+        <Border BorderThickness="1" BorderBrush="Black">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="40"/>
+              <RowDefinition Height="1"/>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <Label MouseDown="TitleCtrl_MouseDown" x:Name="TitleCtrl" Background="LightGray" FontWeight="ExtraBold"
+                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="{Binding Title}"/>
+            <Label Grid.Row="1" Background="Black"/>
+            <Grid Row="2" Margin="2">
+              <DataGrid Background="White" RowHeight="25" Grid.Row="0" SelectionMode="Single" SelectionUnit="Cell"
+                        AutoGenerateColumns="false" IsReadOnly="false" BorderThickness="0"
+                        ColumnHeaderStyle="{DynamicResource CenterGridHeaderStyle}"
+                        CellStyle="{StaticResource styleVCenterGridCell}" CanUserAddRows="false" CanUserDeleteRows="false"
+                        CanUserReorderColumns="false" CanUserResizeRows="false" CanUserSortColumns="false"
+                        ItemsSource="{Binding TableData}">
+                <DataGrid.Columns>
+                  <DataGridTextColumn Header="KEY" IsReadOnly="true" MinWidth="100" Width="Auto" Binding="{Binding Path=Key}"/>
+                  <DataGridTextColumn Header="VALUE" Width="*" Binding="{Binding Path=Value}"/>
+                </DataGrid.Columns>
+              </DataGrid>
+            </Grid>
+            <StackPanel x:Name="ActiveButtons" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center"
+                        Margin="2">
+              <Button Click="btnOK_Clicked" x:Name="btnOK" Margin="4, 1, 4, 1" MinWidth="50" Background="#F0F0F0"
+                      BorderBrush="Gray" BorderThickness="1" VerticalAlignment="Stretch"
+                      Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">OK</Button>
+              <Button Click="btnCancel_Clicked" x:Name="btnCancel" Margin="4, 1, 4, 1" MinWidth="50" Background="#F0F0F0"
+                      BorderBrush="Gray" BorderThickness="1" VerticalAlignment="Stretch"
+                      Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">Cancel</Button>
+            </StackPanel>
+          </Grid>
+        </Border>
+      </Border>
+    </Border>
+  </Border>
+</Window>

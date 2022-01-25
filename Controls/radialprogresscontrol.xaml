@@ -1,0 +1,14 @@
+<UserControl x:Class="EMx.UI.Controls.RadialProgressControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EMx.UI.Controls">
+  <Grid>
+    <Ellipse Stroke="#F2F2F2" StrokeThickness="{Binding RadialThickness}"/>
+    <local:RadialArcControl x:Name="ctrlArc" Stroke="{Binding RadialColor}" StrokeThickness="{Binding RadialThickness}"/>
+    <Label x:Name="lblProgress" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+           HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30"
+           FontFamily="tahoma" FontWeight="Bold" Foreground="#4C4348"/>
+  </Grid>
+</UserControl>

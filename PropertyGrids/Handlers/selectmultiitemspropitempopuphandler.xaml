@@ -1,0 +1,20 @@
+<UserControl x:Class="EMx.UI.PropertyGrids.Handlers.SelectMultiItemsPropItemPopupHandler"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EMx.UI.PropertyGrids.Handlers">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <Label Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+           HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Padding="1" Margin="1"
+           Content="{Binding PropInfo}" ToolTip="{Binding PropInfoTooltip}"/>
+    <Label Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+           VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="1" Width="30"
+           Margin="1" FontWeight="Bold" BorderThickness="1" BorderBrush="DarkGray" Background="Transparent"
+           Foreground="IndianRed">...</Label>
+  </Grid>
+</UserControl>

@@ -1,0 +1,78 @@
+<UserControl x:Class="EMx.UI.Susceptors.MultiRingSusceptorMaker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:EMx.UI.Susceptors"
+             xmlns:xceed="http://schemas.xceed.com/wpf/xaml/toolkit"
+             Background="White">
+  <Grid>
+    <StackPanel Orientation="Vertical">
+      <GroupBox Header="Susceptor" VerticalAlignment="Top">
+        <Grid>
+          <ListBox SelectionChanged="lbxItems_SelectionChanged" x:Name="lbxItems" HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Width="157" Height="88" Margin="10,10,0,0"/>
+          <Button Click="btnAddRing_Click" x:Name="btnAddRing" HorizontalAlignment="Left" VerticalAlignment="Top"
+                  Margin="172,10,0,0" Height="26" Width="106">Add Ring</Button>
+          <Button Click="btnDeleteRing_Click" x:Name="btnDeleteRing" HorizontalAlignment="Left"
+                  VerticalAlignment="Top" Margin="172,41,0,0" Height="26" Width="106" Content="Delete Ring"/>
+          <Button Click="btnClearRing_Click" x:Name="btnClearRing" HorizontalAlignment="Left" VerticalAlignment="Top"
+                  Margin="172,72,0,0" Height="26" Width="106" Content="Clear"/>
+          <Label Content="Wafer Diamenter" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,103,0,0"/>
+          <Label Content="Susceptor Diamenter" HorizontalAlignment="Left" VerticalAlignment="Top"
+                 Margin="10,134,0,0"/>
+          <xceed:DoubleUpDown ValueChanged="DoubleUpDown_ValueChanged" Minimum="0" HorizontalAlignment="Left"
+                              VerticalAlignment="Top" Height="26" Width="91" Margin="150,103,0,0" Value="{Binding WaferSize}"/>
+          <xceed:DoubleUpDown ValueChanged="DoubleUpDown_ValueChanged" Minimum="0" HorizontalAlignment="Left"
+                              VerticalAlignment="Top" Height="26" Width="91" Margin="150,134,0,0" Value="{Binding SusceptorSize}"/>
+          <Label Content="inch" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246,103,0,0"/>
+          <Label Content="inch" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246,134,0,0"/>
+        </Grid>
+      </GroupBox>
+      <GroupBox Header="Current Ring" VerticalAlignment="Top">
+        <Grid>
+          <Label Content="Wafer Diamenter" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,157,0"/>
+          <Label Content="Distance" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,41,157,0"/>
+          <Label Content="Wafer Count" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,72,157,0"
+                 Foreground="Red"/>
+          <Label Content="Flat Directions" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,103,157,0"/>
+          <Label Content="Initial Angle" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,134,157,0"
+                 Foreground="Red"/>
+          <Label Content="Rotation Direction" HorizontalAlignment="Right" VerticalAlignment="Top"
+                 Margin="0,165,157,0"/>
+          <xceed:DoubleUpDown ValueChanged="DoubleUpDown_ValueChanged_1" Minimum="0" HorizontalAlignment="Left"
+                              VerticalAlignment="Top" Height="26" Width="91" Margin="150,10,0,0"
+                              Value="{Binding CurrentRing.WaferSize}"/>
+          <xceed:DoubleUpDown ValueChanged="DoubleUpDown_ValueChanged_1" Minimum="0" HorizontalAlignment="Left"
+                              VerticalAlignment="Top" Height="26" Width="91" Margin="150,41,0,0" Increment="0.1"
+                              Value="{Binding CurrentRing.Distance}"/>
+          <xceed:IntegerUpDown ValueChanged="DoubleUpDown_ValueChanged_1" Minimum="0" HorizontalAlignment="Left"
+                               VerticalAlignment="Top" Height="26" Width="92" Margin="150,72,0,0"
+                               Value="{Binding CurrentRing.WaferCount}"/>
+          <ComboBox SelectionChanged="cmbFlat_Copy_SelectionChanged" x:Name="cmbCurrentFlat" HorizontalAlignment="Left"
+                    Margin="150,103,0,0" VerticalAlignment="Top" Width="90" Height="26" SelectedIndex="0">
+            <TextBlock Text="In"/>
+            <TextBlock Text="Out"/>
+          </ComboBox>
+          <xceed:DoubleUpDown ValueChanged="DoubleUpDown_ValueChanged_1" Minimum="0" HorizontalAlignment="Left"
+                              VerticalAlignment="Top" Height="26" Width="92" Margin="150,134,0,0" Increment="10" Maximum="360"
+                              Value="{Binding CurrentRing.InitialAngle}"/>
+          <ComboBox SelectionChanged="cmbFlat_Copy_SelectionChanged" x:Name="cmbCurrentRotationDirection"
+                    HorizontalAlignment="Left" Margin="150,165,0,0" VerticalAlignment="Top" Width="91" Height="26"
+                    SelectedIndex="0">
+            <TextBlock Text="CW"/>
+            <TextBlock Text="CCW"/>
+          </ComboBox>
+          <Label Content="inch" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246,10,0,0"/>
+          <Label Content="inch" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246,41,0,0"/>
+          <Label Content="deg" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="247,134,0,0"/>
+        </Grid>
+      </GroupBox>
+      <Button Click="btnReorder_Click" x:Name="btnReorder" Margin="5" Height="40">Sort Wafer Index</Button>
+    </StackPanel>
+    <UniformGrid Columns="2" VerticalAlignment="Bottom" Height="50">
+      <Button Click="btnSave_Click" x:Name="btnSave" Margin="5">Save</Button>
+      <Button Click="btnLoad_Click" x:Name="btnLoad" Margin="5">Load</Button>
+    </UniformGrid>
+  </Grid>
+</UserControl>

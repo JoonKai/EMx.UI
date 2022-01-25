@@ -1,0 +1,856 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\07_etamax\2DInterpolationSimulator_190729\2DInterpolationSimulator_190729\EMx.UI.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6A41554F-6D21-4679-9F8D-5498FBE09A88}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>EMx.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>EMx.UI</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EMx">
+      <HintPath>lib\EMx.dll</HintPath>
+    </Reference>
+    <Reference Include="EMx.Logging">
+      <HintPath>lib\EMx.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="EMx.Physics">
+      <HintPath>lib\EMx.Physics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WriteableBitmapEx.Wpf">
+      <HintPath>lib\WriteableBitmapEx.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>lib\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="phtree">
+      <HintPath>lib\phtree.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CanvasEx.cs" />
+    <Compile Include="CanvasExBoxItem.xaml.cs">
+      <DependentUpon>canvasexboxitem.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CanvasExEvent.cs" />
+    <Compile Include="NativeDragEventHelper.cs" />
+    <Compile Include="UIElementDragEventHelper.cs" />
+    <Compile Include="UIElementDragStartArgs.cs" />
+    <Compile Include="UIElementPositionChangeDragger.cs" />
+    <Compile Include="GridEx.cs" />
+    <Compile Include="UIElementSizeChangeDragger.cs" />
+    <Compile Include="UIHelper.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="WPFs\eMouseWheelEventType.cs" />
+    <Compile Include="WPFs\MouseWheelGesture.cs" />
+    <Compile Include="WPFs\RenderingFigureTooltip.cs" />
+    <Compile Include="WPFs\RenderingFigureTooltipManager.cs" />
+    <Compile Include="Windows\eHotKeyModifier.cs" />
+    <Compile Include="Windows\FullScreenHelper.cs" />
+    <Compile Include="Windows\Win32WindowHandle.cs" />
+    <Compile Include="Windows\WindowsHelper.cs" />
+    <Compile Include="Windows\WindowsHotKeyArguments.cs" />
+    <Compile Include="Windows\WindowsHotKeyData.cs" />
+    <Compile Include="Windows\WindowsHotKeyHandler.cs" />
+    <Compile Include="Windows\WindowsHotKeyHelper.cs" />
+    <Compile Include="Windows\Screens\eWindowDockingPosition.cs" />
+    <Compile Include="Windows\Screens\eWindowsTaskbarLocation.cs" />
+    <Compile Include="ValueConverters\ColorToSolidBrushConverter.cs" />
+    <Compile Include="ValueConverters\BaseOnewayConverter.cs" />
+    <Compile Include="ValueConverters\ImageConverter.cs" />
+    <Compile Include="ValueConverters\ListStringToStringConverter.cs" />
+    <Compile Include="ValueConverters\MxFontWeightToFontWeightConverter.cs" />
+    <Compile Include="ValueConverters\NumberToStringConverter.cs" />
+    <Compile Include="ValueConverters\StringToColorConverter.cs" />
+    <Compile Include="ValueConverters\StringToDataGridLengthConverter.cs" />
+    <Compile Include="ValueConverters\StringToGridLengthConverter.cs" />
+    <Compile Include="ValueConverters\StringToSolidBrushConverter.cs" />
+    <Compile Include="ValueConverters\StringToThicknessConverter.cs" />
+    <Compile Include="ValueConverters\TimeSpanToStringConverter.cs" />
+    <Compile Include="TimeEvents\DailyTimeEventItemLocation.cs" />
+    <Compile Include="TimeEvents\TimeEventListItemControl.xaml.cs">
+      <DependentUpon>timeeventstimeeventlistitemcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TimeEvents\TimeEventWeeklyTimeTableControl.xaml.cs">
+      <DependentUpon>timeeventstimeeventweeklytimetablecontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TimeEvents\WeeklyTimeEventDialogHandle.cs" />
+    <Compile Include="TimeEvents\WeeklyTimeEventManageDialog.xaml.cs">
+      <DependentUpon>timeeventsweeklytimeeventmanagedialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Susceptors\Arc.cs" />
+    <Compile Include="Susceptors\MultiRingSusceptorMaker.xaml.cs">
+      <DependentUpon>susceptorsmultiringsusceptormaker.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Susceptors\1MultiRingSusceptorMaker.xaml.cs" />
+    <Compile Include="Susceptors\SingleCirclePositionerType.cs" />
+    <Compile Include="Susceptors\SingleCirclePositioner.cs" />
+    <Compile Include="Susceptors\SusceptorUnit.cs" />
+    <Compile Include="Susceptors\SusceptorBase.cs" />
+    <Compile Include="Susceptors\SusceptorMaker.xaml.cs">
+      <DependentUpon>susceptorssusceptormaker.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Susceptors\SusceptorLayoutViewer.xaml.cs">
+      <DependentUpon>susceptorssusceptorlayoutviewer.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Susceptors\SusceptorWaferViewerRaiseEventType.cs" />
+    <Compile Include="Susceptors\WaferEventHandler.cs" />
+    <Compile Include="Susceptors\WaferViewer.xaml.cs">
+      <DependentUpon>susceptorswaferviewer.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SpectraProcessings\DBRCalculationWindow.xaml.cs">
+      <DependentUpon>spectraprocessingsdbrcalculationwindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\PropertyGrid.xaml.cs">
+      <DependentUpon>propertygridspropertygrid.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\PropertyGridDialog.xaml.cs">
+      <DependentUpon>propertygridspropertygriddialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\EncodingLiteralStringPropItemHandler.xaml.cs">
+      <DependentUpon>handlersencodingliteralstringpropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\FilePathPropItemHandler.xaml.cs">
+      <DependentUpon>handlersfilepathpropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\ManagedTypePropItemHandler.xaml.cs">
+      <DependentUpon>handlersmanagedtypepropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\PropertyGridItemsPropItemHandler.xaml.cs">
+      <DependentUpon>handlerspropertygriditemspropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\PropertyGridPropItemHandler.xaml.cs">
+      <DependentUpon>handlerspropertygridpropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\SelectMultiItemsPropItemPopupHandler.xaml.cs">
+      <DependentUpon>handlersselectmultiitemspropitempopuphandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\ThicknessTypePropItemHandler.xaml.cs">
+      <DependentUpon>handlersthicknesstypepropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\TimeSpanPropItemHandler.xaml.cs">
+      <DependentUpon>handlerstimespanpropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\PropertyGridItem.cs" />
+    <Compile Include="PropertyGrids\Handlers\ColorPropItemHandler.xaml.cs">
+      <DependentUpon>handlerscolorpropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\ComboPropItemHandler.xaml.cs">
+      <DependentUpon>handlerscombopropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\DoubleListPropItemHandler.xaml.cs">
+      <DependentUpon>handlersdoublelistpropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\HexNumberPropItemHandler.xaml.cs">
+      <DependentUpon>handlershexnumberpropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\HexStringPropItemHandler.xaml.cs">
+      <DependentUpon>handlershexstringpropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\IntListPropItemHandler.xaml.cs">
+      <DependentUpon>handlersintlistpropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\NumericPointPropItemHandler.xaml.cs">
+      <DependentUpon>handlersnumericpointpropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\NumericSizePropItemHandler.xaml.cs">
+      <DependentUpon>handlersnumericsizepropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\StringComboPropItemHandler.xaml.cs">
+      <DependentUpon>handlersstringcombopropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\StringListPropItemHandler.xaml.cs">
+      <DependentUpon>handlersstringlistpropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyGrids\Handlers\TextPropItemHandler.xaml.cs">
+      <DependentUpon>handlerstextpropitemhandler.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PointMeasures\PointLocationGroupViewControl.xaml.cs">
+      <DependentUpon>pointmeasurespointlocationgroupviewcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PointMeasures\PointLocationGroupViewDialog.xaml.cs">
+      <DependentUpon>pointmeasurespointlocationgroupviewdialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartitionMaps\MapItemHeader.cs" />
+    <Compile Include="PartitionMaps\PartitionMap.cs" />
+    <Compile Include="PartitionMaps\PartitionMapControl.xaml.cs">
+      <DependentUpon>partitionmapspartitionmapcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartitionMaps\PartitionMapUIControl.xaml.cs">
+      <DependentUpon>partitionmapspartitionmapuicontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartitionMaps\ScalablePartitionMapControl.xaml.cs">
+      <DependentUpon>partitionmapsscalablepartitionmapcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartitionMaps\ScalablePartitionMapUIControl.xaml.cs">
+      <DependentUpon>partitionmapsscalablepartitionmapuicontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartitionMaps\MapPins\MapPinGroup.cs" />
+    <Compile Include="PartitionMaps\MapPins\MapPinItem.cs" />
+    <Compile Include="MxControls\Props\eMxFontWeight.cs" />
+    <Compile Include="Maps\ContextMenuRegistrationItem.cs" />
+    <Compile Include="Maps\ConvertFloatMapToImage.cs" />
+    <Compile Include="Maps\ConvertMapToImage.cs" />
+    <Compile Include="Maps\MultiWaferItem.cs" />
+    <Compile Include="Maps\MultiWaferItemUI.xaml.cs">
+      <DependentUpon>mapsmultiwaferitemui.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\MultiWafersMapControl.xaml.cs">
+      <DependentUpon>mapsmultiwafersmapcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\OnlyWaferMapControl.xaml.cs">
+      <DependentUpon>mapsonlywafermapcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\WaferMapControl.xaml.cs">
+      <DependentUpon>mapswafermapcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\MapRange.cs" />
+    <Compile Include="Maps\MapRangeControl.xaml.cs">
+      <DependentUpon>mapsmaprangecontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Maps\Draws\DrawWaferControl.xaml.cs">
+      <DependentUpon>drawsdrawwafercontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImageProcessings\BitmapProcessors\AboveThresholdBitmapProcessor.cs" />
+    <Compile Include="ImageProcessings\BitmapProcessors\AdjustContrastBitmapProcessor.cs" />
+    <Compile Include="ImageProcessings\BitmapProcessors\BelowThresholdBitmapProcessor.cs" />
+    <Compile Include="ImageProcessings\BitmapProcessors\BinarizationBitmapProcessor.cs" />
+    <Compile Include="ImageProcessings\BitmapProcessors\CropBitmapProcessor.cs" />
+    <Compile Include="ImageProcessings\BitmapProcessors\ExportDiffImageBitmapProcessor.cs" />
+    <Compile Include="ImageProcessings\BitmapProcessors\GroupAreaAndExportBitmapProcessor.cs" />
+    <Compile Include="ImageProcessings\BitmapProcessors\InverseBitmapProcessor.cs" />
+    <Compile Include="ImageProcessings\BitmapProcessors\MedianBitmapProcessor.cs" />
+    <Compile Include="ImageProcessings\BitmapProcessors\OffsetBitmapProcessor.cs" />
+    <Compile Include="FloatMaps\UpdatingFloatMap_ScanningEventListener.cs" />
+    <Compile Include="FloatMaps\WaferFloatMapControl.xaml.cs">
+      <DependentUpon>floatmapswaferfloatmapcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensions\GraphicsHelper.cs" />
+    <Compile Include="Extensions\SimpleRGB.cs" />
+    <Compile Include="Extensions\UIExtension.cs" />
+    <Compile Include="Equipments\WaferSlots\WaferSlotListViewControl.xaml.cs">
+      <DependentUpon>waferslotswaferslotlistviewcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Equipments\Recipes\RecipeManagementUI.cs" />
+    <Compile Include="Equipments\Alarms\AlarmManagerViewControl.xaml.cs">
+      <DependentUpon>alarmsalarmmanagerviewcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Equipments\Alarms\ManagedAlarmViewItem.cs" />
+    <Compile Include="Dialogs\FavoriteDirectoryDialog.xaml.cs">
+      <DependentUpon>dialogsfavoritedirectorydialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\FavoriteDirectoryItem.cs" />
+    <Compile Include="Dialogs\InputKeyValueItemsDialog.xaml.cs">
+      <DependentUpon>dialogsinputkeyvalueitemsdialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\1InputKeyValueItemsDialog.xaml.cs" />
+    <Compile Include="Dialogs\InputLongMessageDialog.xaml.cs">
+      <DependentUpon>dialogsinputlongmessagedialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\InputMessageDialog.xaml.cs">
+      <DependentUpon>dialogsinputmessagedialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\InputPasswordDialog.xaml.cs">
+      <DependentUpon>dialogsinputpassworddialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\InputRangeDialog.xaml.cs">
+      <DependentUpon>dialogsinputrangedialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SelectDateRangeDialog.xaml.cs">
+      <DependentUpon>dialogsselectdaterangedialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SelectFieldControl.xaml.cs">
+      <DependentUpon>dialogsselectfieldcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NotifyMessageDialog.xaml.cs">
+      <DependentUpon>dialogsnotifymessagedialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\eNotifyMessageType.cs" />
+    <Compile Include="Dialogs\eDialogButtons.cs" />
+    <Compile Include="Dialogs\SelectFieldsDialog.xaml.cs">
+      <DependentUpon>dialogsselectfieldsdialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\1SelectFieldsDialog.xaml.cs" />
+    <Compile Include="Dialogs\SelectListItemDialog.xaml.cs">
+      <DependentUpon>dialogsselectlistitemdialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SelectListItemSearchableDialog.xaml.cs">
+      <DependentUpon>dialogsselectlistitemsearchabledialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SelectMultiItemsData.cs" />
+    <Compile Include="Dialogs\SelectMultiItemsDialog.xaml.cs">
+      <DependentUpon>dialogsselectmultiitemsdialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SelectPlaneDirectionDialog.xaml.cs">
+      <DependentUpon>dialogsselectplanedirectiondialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SelectRecentUsedFileDialog.xaml.cs">
+      <DependentUpon>dialogsselectrecentusedfiledialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\WaitingBarDialog.xaml.cs">
+      <DependentUpon>dialogswaitingbardialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\WaitingDialog.xaml.cs">
+      <DependentUpon>dialogswaitingdialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\WaitingRunnableDialog.xaml.cs">
+      <DependentUpon>dialogswaitingrunnabledialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\WaitingRunnableDialogNew.xaml.cs">
+      <DependentUpon>dialogswaitingrunnabledialognew.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Data\RecentUsedFileInfo.cs" />
+    <Compile Include="Data\PolynomialInterpolationDataControl.xaml.cs">
+      <DependentUpon>datapolynomialinterpolationdatacontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\Models\QueryableMethodSupplier.cs" />
+    <Compile Include="Data\Models\TargetPropertiesSupplier.cs" />
+    <Compile Include="Data\Models\TargetPropertySupplier.cs" />
+    <Compile Include="ColorConverters\ValueToColorConverter.cs" />
+    <Compile Include="Controls\ClickableGridSplitter.cs" />
+    <Compile Include="Controls\FilePathLineControl.xaml.cs">
+      <DependentUpon>controlsfilepathlinecontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\HighlightableTextBlock.xaml.cs">
+      <DependentUpon>controlshighlightabletextblock.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ImageAndTextButton.xaml.cs">
+      <DependentUpon>controlsimageandtextbutton.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\NumericPositionControl.xaml.cs">
+      <DependentUpon>controlsnumericpositioncontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\NumericRangeControl.xaml.cs">
+      <DependentUpon>controlsnumericrangecontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\NumericValueControl.xaml.cs">
+      <DependentUpon>controlsnumericvaluecontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\RadialArcControl.cs" />
+    <Compile Include="Controls\RadialProgressControl.xaml.cs">
+      <DependentUpon>controlsradialprogresscontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchBox.xaml.cs">
+      <DependentUpon>controlssearchbox.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\SelectFilepathControl.xaml.cs">
+      <DependentUpon>controlsselectfilepathcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ToggleStateButton.xaml.cs">
+      <DependentUpon>controlstogglestatebutton.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Compositions\CompositionRatioSimulationControl.xaml.cs">
+      <DependentUpon>compositionscompositionratiosimulationcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ColorControls\HueControl.xaml.cs">
+      <DependentUpon>colorcontrolshuecontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ColorConverters\ColorModelConverter.cs" />
+    <Compile Include="ColorConverters\PredefinedColorsConverter.cs" />
+    <Compile Include="ColorConverters\PredefinedColorsGradientConverter.cs" />
+    <Compile Include="ColorConverters\IColorConverter.cs" />
+    <Compile Include="Charts\eAreaLineDuplicationRule.cs" />
+    <Compile Include="Charts\eChartAxisDataType.cs" />
+    <Compile Include="Charts\eChartAxisPosition.cs" />
+    <Compile Include="Charts\EMxChart.xaml.cs">
+      <DependentUpon>chartsemxchart.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Charts\EMxChartArea.cs" />
+    <Compile Include="Charts\EMxChartAreaLine.xaml.cs">
+      <DependentUpon>chartsemxchartarealine.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Charts\EMxChartAreaScatter.xaml.cs">
+      <DependentUpon>chartsemxchartareascatter.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Charts\AxisUnitConverterType.cs" />
+    <Compile Include="Charts\EMxChartAxis.xaml.cs">
+      <DependentUpon>chartsemxchartaxis.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Charts\EMxChartLayout.cs" />
+    <Compile Include="Charts\EMxChartLegend.xaml.cs">
+      <DependentUpon>chartsemxchartlegend.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Charts\EMxChartLineSeries.cs" />
+    <Compile Include="Charts\EMxChartLineSeriesPoint.cs" />
+    <Compile Include="Charts\EMxChartScatterSeries.cs" />
+    <Compile Include="Charts\IEMxChartSeries.cs" />
+    <Compile Include="Arrows\CircleBaseArrow.xaml.cs">
+      <DependentUpon>arrowscirclebasearrow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XamlGeneratedNamespace\GeneratedInternalTypeHelper.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\controls\searchbox\cancel_button.png" />
+    <Resource Include="res\controls\searchbox\search_button.png" />
+    <Resource Include="res\dialog_002520icon\error.png" />
+    <Resource Include="res\dialog_002520icon\message.png" />
+    <Resource Include="res\dialog_002520icon\question.png" />
+    <Resource Include="res\dialog_002520icon\warning.png" />
+    <Resource Include="resources\box_down.png" />
+    <Resource Include="resources\box_left.png" />
+    <Resource Include="resources\box_right.png" />
+    <Resource Include="resources\box_up.png" />
+    <Resource Include="resources\forbidden.png" />
+    <Resource Include="resources\indi_options.png" />
+    <Resource Include="resources\map_pin50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="arrows\circlebasearrow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="canvasexboxitem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="charts\emxchart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="charts\emxchartarealine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="charts\emxchartareascatter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="charts\emxchartaxis.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="charts\emxchartlegend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="colorcontrols\huecontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="compositions\compositionratiosimulationcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\filepathlinecontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\highlightabletextblock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\imageandtextbutton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\numericpositioncontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\numericrangecontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\numericvaluecontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\radialprogresscontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\searchbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\selectfilepathcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\togglestatebutton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="data\polynomialinterpolationdatacontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\favoritedirectorydialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\inputkeyvalueitemsdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\inputlongmessagedialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\inputmessagedialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\inputpassworddialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\inputrangedialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\notifymessagedialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\selectdaterangedialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\selectfieldcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\selectfieldsdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\selectlistitemdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\selectlistitemsearchabledialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\selectmultiitemsdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\selectplanedirectiondialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\selectrecentusedfiledialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\waitingbardialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\waitingdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\waitingrunnabledialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="dialogs\waitingrunnabledialognew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="equipments\alarms\alarmmanagerviewcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="equipments\waferslots\waferslotlistviewcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="floatmaps\waferfloatmapcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="maps\draws\drawwafercontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="maps\maprangecontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="maps\multiwaferitemui.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="maps\multiwafersmapcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="maps\onlywafermapcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="maps\wafermapcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="partitionmaps\partitionmapcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="partitionmaps\partitionmapuicontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="partitionmaps\scalablepartitionmapcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="partitionmaps\scalablepartitionmapuicontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="pointmeasures\pointlocationgroupviewcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="pointmeasures\pointlocationgroupviewdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\colorpropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\combopropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\doublelistpropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\encodingliteralstringpropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\filepathpropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\hexnumberpropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\hexstringpropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\intlistpropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\managedtypepropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\numericpointpropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\numericsizepropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\propertygriditemspropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\propertygridpropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\selectmultiitemspropitempopuphandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\stringcombopropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\stringlistpropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\textpropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\thicknesstypepropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\handlers\timespanpropitemhandler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\propertygrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="propertygrids\propertygriddialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="spectraprocessings\dbrcalculationwindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="susceptors\multiringsusceptormaker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="susceptors\susceptorlayoutviewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="susceptors\susceptormaker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="susceptors\waferviewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="timeevents\timeeventlistitemcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="timeevents\timeeventweeklytimetablecontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="timeevents\weeklytimeeventmanagedialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,52 @@
+<Window x:Class="EMx.UI.Dialogs.SelectListItemSearchableDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:emx.ui.ctrl="clr-namespace:EMx.UI.Controls"
+        Loaded="Window_Loaded" Title="NotifyMessage" Height="450" Width="600" WindowStyle="None"
+        FontSize="11.5" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+  <Border BorderThickness="1" BorderBrush="LightGray">
+    <Border BorderThickness="3" BorderBrush="White">
+      <Border BorderThickness="2" BorderBrush="White">
+        <Border BorderThickness="1" BorderBrush="Black">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="35"/>
+              <RowDefinition Height="1"/>
+              <RowDefinition Height="25"/>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <Label MouseDown="TitleCtrl_MouseDown" Background="#ABC5FE" FontWeight="ExtraBold"
+                   HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Content="{Binding Title}"/>
+            <Label Grid.Row="1" Background="Black"/>
+            <TextBox TextChanged="txtTypeKeys_TextChanged" KeyDown="txtTypeKeys_KeyDown" x:Name="txtTypeKeys"
+                     Grid.Row="2" Margin="1" FontWeight="ExtraBold"
+                     Style="{StaticResource {x:Static ToolBar.TextBoxStyleKey}}" HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch" BorderBrush="DarkGray" BorderThickness="1"
+                     HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+            <Border Grid.Row="3" BorderThickness="1" BorderBrush="Gray" Margin="3">
+              <ListBox KeyDown="lstItem_KeyDown" x:Name="lstItem" BorderThickness="0"
+                       ScrollViewer.VerticalScrollBarVisibility="Visible"
+                       ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <emx.ui.ctrl:HighlightableTextBlock PatternMatchData="{Binding}"/>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ListBox>
+            </Border>
+            <StackPanel x:Name="ActiveButtons" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center"
+                        Margin="2">
+              <Button Click="btnOK_Click" x:Name="btnOK" Margin="4, 1, 4, 1" MinWidth="50" Background="#F0F0F0"
+                      BorderBrush="Gray" BorderThickness="1" VerticalAlignment="Stretch"
+                      Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">OK</Button>
+              <Button Click="btnCancel_Click" x:Name="btnCancel" Margin="4, 1, 4, 1" MinWidth="50" Background="#F0F0F0"
+                      BorderBrush="Gray" BorderThickness="1" VerticalAlignment="Stretch"
+                      Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">Cancel</Button>
+            </StackPanel>
+          </Grid>
+        </Border>
+      </Border>
+    </Border>
+  </Border>
+</Window>

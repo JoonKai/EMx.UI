@@ -1,0 +1,35 @@
+<UserControl x:Class="EMx.UI.Maps.WaferMapControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:arrows="clr-namespace:EMx.UI.Arrows"
+             xmlns:emxui.maps="clr-namespace:EMx.UI.Maps"
+             FontSize="11" Background="#F9F9F9" SnapsToDevicePixels="true" MinWidth="30" MinHeight="30"
+             Padding="2">
+  <Grid ContextMenuOpening="ContextMenu_ContextMenuOpening">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition x:Name="colFirst" Width="*"/>
+      <ColumnDefinition Width="{Binding RangeBarWidth}"/>
+    </Grid.ColumnDefinitions>
+    <FrameworkElement.ContextMenu>
+      <ContextMenu/>
+    </FrameworkElement.ContextMenu>
+    <Grid MouseMove="ctrlMapImage_MouseMove" MouseLeftButtonDown="OnMouseClickOnMapImage"
+          x:Name="ctrlMapGrid" Margin="0" ZIndex="1">
+      <Grid>
+        <Image x:Name="ctrlMapImage" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center"
+               Stretch="Uniform"/>
+        <Canvas x:Name="ctrlCanvas" ZIndex="2">
+          <Border x:Name="FocusedRectBorder" BorderBrush="Transparent" BorderThickness="1" Visibility="Hidden">
+            <Rectangle x:Name="FocusedRect" Stroke="Black" StrokeThickness="2" Fill="Transparent"/>
+          </Border>
+          <arrows:CircleBaseArrow x:Name="ctrlArrow" Visibility="Hidden"/>
+          <Line x:Name="ctrlHoriLine" StrokeThickness="2" Stroke="Red" Visibility="{Binding ShowCrossLine}"/>
+          <Line x:Name="ctrlVertiLine" StrokeThickness="2" Stroke="Red" Visibility="{Binding ShowCrossLine}"/>
+        </Canvas>
+      </Grid>
+    </Grid>
+    <emxui.maps:MapRangeControl x:Name="ctrlRangeBar" BorderBrush="DarkGray" BorderThickness="1" Grid.Column="1"/>
+  </Grid>
+</UserControl>

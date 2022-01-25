@@ -1,0 +1,36 @@
+<UserControl x:Class="EMx.UI.Charts.EMxChart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:emxui="clr-namespace:EMx.UI.Charts"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}">
+  <Grid Name="ctrlGrid">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="25"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="30"/>
+      <RowDefinition Height="20"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="20"/>
+      <ColumnDefinition Width="50"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Label Grid.Column="2" Grid.Row="0" FontSize="13" Padding="0" HorizontalAlignment="Center"
+           VerticalAlignment="Center" Content="{Binding Path=ChartTitle}"/>
+    <ContentControl Grid.Column="2" Grid.Row="2" Content="{Binding Path=XAxis}"/>
+    <ContentControl Grid.Column="1" Grid.Row="1" Content="{Binding Path=YAxis}"/>
+    <ContentControl Grid.Column="2" Grid.Row="1" Content="{Binding Path=ChartArea}"/>
+    <TextBlock Name="txtBottom" Grid.Column="2" Grid.Row="3" Padding="0" FontSize="12"
+               HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=XAxis.AxisAlias}"/>
+    <TextBlock Name="txtLeft" Grid.Column="0" Grid.Row="1" Padding="0" FontSize="12" HorizontalAlignment="Center"
+               VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Text="{Binding Path=YAxis.AxisAlias}">
+      <FrameworkElement.LayoutTransform>
+        <TransformGroup>
+          <RotateTransform Angle="-90"/>
+        </TransformGroup>
+      </FrameworkElement.LayoutTransform>
+    </TextBlock>
+  </Grid>
+</UserControl>

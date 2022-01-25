@@ -1,0 +1,59 @@
+<Window x:Class="EMx.UI.Dialogs.InputMessageDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Loaded="Window_Loaded" Title="NotifyMessage" Height="300" Width="450" WindowStyle="None"
+        FontSize="11" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+  <Border BorderThickness="1" BorderBrush="LightGray">
+    <Border BorderThickness="3" BorderBrush="White">
+      <Border BorderThickness="2" BorderBrush="White">
+        <Border BorderThickness="1" BorderBrush="Black">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="40"/>
+              <RowDefinition Height="1"/>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="35"/>
+              <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <Label MouseDown="TitleCtrl_MouseDown" x:Name="TitleCtrl" Background="LightGray" FontWeight="ExtraBold"
+                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="{Binding Title}"/>
+            <Label Grid.Row="1" Background="Black"/>
+            <Grid Row="2">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+              <Image Name="imgIcon" Grid.Column="1" Margin="5, 5, 5, 5" VerticalAlignment="Top"/>
+              <ScrollViewer Grid.Column="2" Margin="0, 2, 0, 0" HorizontalScrollBarVisibility="Disabled"
+                            VerticalScrollBarVisibility="Auto">
+                <TextBlock SnapsToDevicePixels="true" UseLayoutRounding="true" HorizontalAlignment="Center"
+                           VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding Message}"/>
+              </ScrollViewer>
+            </Grid>
+            <Border Grid.Row="3" Margin="3" Padding="3">
+              <TextBox KeyDown="txtInput_KeyDown" x:Name="txtInput" BorderThickness="1" AcceptsTab="true"
+                       BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                       Text="{Binding InputMessage, Mode=TwoWay}"/>
+            </Border>
+            <StackPanel x:Name="ActiveButtons" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center"
+                        Margin="2">
+              <Button Click="ChoiseButton_Clicked" x:Name="btnYes" Margin="4, 1, 4, 1" MinWidth="50" Background="#F0F0F0"
+                      BorderBrush="Gray" BorderThickness="1" VerticalAlignment="Stretch"
+                      Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">Yes</Button>
+              <Button Click="ChoiseButton_Clicked" x:Name="btnNo" Margin="4, 1, 4, 1" MinWidth="50" Background="#F0F0F0"
+                      BorderBrush="Gray" BorderThickness="1" VerticalAlignment="Stretch"
+                      Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">No</Button>
+              <Button Click="ChoiseButton_Clicked" x:Name="btnOK" Margin="4, 1, 4, 1" MinWidth="50" Background="#F0F0F0"
+                      BorderBrush="Gray" BorderThickness="1" VerticalAlignment="Stretch"
+                      Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">OK</Button>
+              <Button Click="ChoiseButton_Clicked" x:Name="btnCancel" Margin="4, 1, 4, 1" MinWidth="50"
+                      Background="#F0F0F0" BorderBrush="Gray" BorderThickness="1" VerticalAlignment="Stretch"
+                      Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">Cancel</Button>
+            </StackPanel>
+          </Grid>
+        </Border>
+      </Border>
+    </Border>
+  </Border>
+</Window>

@@ -1,0 +1,45 @@
+<Window x:Class="EMx.UI.PointMeasures.PointLocationGroupViewDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EMx.UI.PointMeasures"
+        xmlns:emx.ui.posmeas="clr-namespace:EMx.UI.PointMeasures"
+        Loaded="Window_Loaded" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow"
+        ResizeMode="CanResizeWithGrip" FontSize="11.5" Title="Point Group Preview" MinWidth="550"
+        MinHeight="610" Height="400" Width="400">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="25"/>
+    </Grid.RowDefinitions>
+    <GroupBox Header="Info" Grid.Row="0">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="23"/>
+          <RowDefinition Height="23"/>
+          <RowDefinition Height="23"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="110"/>
+          <ColumnDefinition Width="4"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Margin="1" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right">Name</Label>
+        <Label Grid.Row="1" Margin="1" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right">Number of Points</Label>
+        <Label Grid.Row="2" Margin="1" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right">Wafer Size</Label>
+        <Label x:Name="lblName" Grid.Row="0" Grid.Column="2" Margin="1" Padding="0" VerticalAlignment="Center"
+               HorizontalAlignment="Left"/>
+        <Label x:Name="lblNumOfPoints" Grid.Row="1" Grid.Column="2" Margin="1" Padding="0"
+               VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <Label x:Name="lblWaferSize" Grid.Row="2" Grid.Column="2" Margin="1" Padding="0"
+               VerticalAlignment="Center" HorizontalAlignment="Left"/>
+      </Grid>
+    </GroupBox>
+    <GroupBox Grid.Row="1" Header="Preview" Margin="1">
+      <emx.ui.posmeas:PointLocationGroupViewControl x:Name="ctrlView"/>
+    </GroupBox>
+    <Button Click="btnClose_Clicked" Grid.Row="2" HorizontalAlignment="Center" Width="50" Margin="1">OK</Button>
+  </Grid>
+</Window>
